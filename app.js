@@ -24,6 +24,9 @@ async function loadAppConfig() {
         }
 
         const data = await response.json();
+        console.log('✅ Apps loaded from JSON:', data.apps);
+        console.log('📊 Total apps:', data.apps.length);
+        console.log('🔗 Sample URLs:', data.apps.slice(0, 3).map(a => `${a.name}: ${a.url}`));
         return data.apps;
     } catch (error) {
         console.error('Error loading app configuration:', error);
@@ -57,6 +60,9 @@ function showError(message) {
  * @returns {HTMLElement} The app card element
  */
 function createAppCard(app) {
+    // Debug: Log app creation
+    console.log(`🏗️ Creating card for: ${app.name}, URL: ${app.url}`);
+
     // Create main card link
     const card = document.createElement('a');
     card.className = 'app-card';
@@ -67,10 +73,13 @@ function createAppCard(app) {
 
     // Prevent default if URL is placeholder
     if (app.url === '#') {
+        console.log(`⚠️ Adding placeholder handler for: ${app.name}`);
         card.addEventListener('click', (e) => {
             e.preventDefault();
             alert(`${app.name} - URL not configured yet`);
         });
+    } else {
+        console.log(`✅ Real URL for ${app.name}: ${app.url}`);
     }
 
     // Create icon container
@@ -161,6 +170,8 @@ function handleSearch() {
 async function init() {
     // Load app configuration from JSON
     apps = await loadAppConfig();
+    console.log('🚀 Init complete. Apps array:', apps);
+    console.log('📦 Apps in memory:', apps.length);
 
     // Render all apps initially
     renderApps(apps);
