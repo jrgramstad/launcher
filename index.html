@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AJ Real Estate Group - Web App Launcher">
+    <title>AJ Real Estate Apps</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="header-title">AJ Real Estate Apps</h1>
+        </header>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <div class="search-wrapper">
+                <span class="search-icon" aria-hidden="true">🔍</span>
+                <input
+                    type="search"
+                    id="searchInput"
+                    class="search-input"
+                    placeholder="Search apps..."
+                    aria-label="Search applications"
+                    autocomplete="off"
+                >
+            </div>
+        </div>
+
+        <!-- App Grid -->
+        <main class="app-grid" id="appGrid" role="main">
+            <!-- Apps will be dynamically inserted here by JavaScript -->
+        </main>
+
+        <!-- No Results Message -->
+        <div class="no-results" id="noResults" role="status" aria-live="polite" style="display: none;">
+            <p>No apps found</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
