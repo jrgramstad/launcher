@@ -57,6 +57,14 @@
       "description": "Legacy P&L system"
     },
     {
+      "name": "Rent or Flip",
+      "icon": "🏘️",
+      "status": "deployed",
+      "url": "https://rentorflip.netlify.app",
+      "color": "#FF6B35",
+      "description": "Investment property decision calculator"
+    },
+    {
       "name": "KPI Dashboard",
       "icon": "📈",
       "status": "planned",

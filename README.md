@@ -99,6 +99,7 @@ Netlify will automatically redeploy!
 - 💰 Balance Sheet (Deployed)
 - 🏢 Property Portal (Deployed)
 - 📈 P&L Legacy (Deployed)
+- 🏘️ Rent or Flip (Deployed)
 - 📈 KPI Dashboard (Planned)
 - ⏱️ Crew Timesheet (Planned)
 - 🔧 Maintenance Requests (Planned)
