@@ -65,6 +65,14 @@
       "description": "Investment property decision calculator"
     },
     {
+      "name": "Auction Prepwork",
+      "icon": "🔨",
+      "status": "deployed",
+      "url": "https://aj-auction.netlify.app",
+      "color": "#A0826D",
+      "description": "Property auction preparation and analysis"
+    },
+    {
       "name": "KPI Dashboard",
       "icon": "📈",
       "status": "planned",
