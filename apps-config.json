@@ -1,0 +1,100 @@
+{
+  "apps": [
+    {
+      "name": "Credit Card Transactions",
+      "icon": "💳",
+      "status": "deployed",
+      "url": "https://credit-card-transaction-processing.netlify.app",
+      "color": "#34C759",
+      "description": "Process and categorize credit card transactions"
+    },
+    {
+      "name": "Property Inspection",
+      "icon": "📋",
+      "status": "in-progress",
+      "url": "https://inspectionaj.netlify.app",
+      "color": "#FF9500",
+      "description": "Christian's digital inspection checklist"
+    },
+    {
+      "name": "Master Property Data",
+      "icon": "🏠",
+      "status": "deployed",
+      "url": "https://masterpropertydata.netlify.app",
+      "color": "#8E44AD",
+      "description": "Central property database"
+    },
+    {
+      "name": "Profit & Loss",
+      "icon": "📊",
+      "status": "deployed",
+      "url": "https://ajpnl2.netlify.app",
+      "color": "#007AFF",
+      "description": "Current P&L reporting"
+    },
+    {
+      "name": "Balance Sheet",
+      "icon": "💰",
+      "status": "deployed",
+      "url": "https://aj-balance-sheet.netlify.app",
+      "color": "#00C7BE",
+      "description": "Company balance sheet"
+    },
+    {
+      "name": "Property Portal",
+      "icon": "🏢",
+      "status": "deployed",
+      "url": "https://portal-ajrealestategroup.netlify.app",
+      "color": "#5856D6",
+      "description": "Legacy property portal"
+    },
+    {
+      "name": "P&L Legacy",
+      "icon": "📈",
+      "status": "deployed",
+      "url": "https://ajpnl.netlify.app",
+      "color": "#FF3B30",
+      "description": "Legacy P&L system"
+    },
+    {
+      "name": "KPI Dashboard",
+      "icon": "📈",
+      "status": "planned",
+      "url": "#",
+      "color": "#30D5C8",
+      "description": "Christian's performance metrics"
+    },
+    {
+      "name": "Crew Timesheet",
+      "icon": "⏱️",
+      "status": "planned",
+      "url": "#",
+      "color": "#8E8E93",
+      "description": "Field crew time tracking"
+    },
+    {
+      "name": "Maintenance Requests",
+      "icon": "🔧",
+      "status": "planned",
+      "url": "#",
+      "color": "#FF3B30",
+      "description": "Tenant maintenance workflow"
+    },
+    {
+      "name": "Vendor Performance",
+      "icon": "📊",
+      "status": "planned",
+      "url": "#",
+      "color": "#5856D6",
+      "description": "Track vendor quality and speed"
+    },
+    {
+      "name": "Eviction Tracking",
+      "icon": "🚪",
+      "status": "planned",
+      "url": "#",
+      "color": "#FFCC00",
+      "description": "Legal eviction process tracker"
+    }
+  ]
+}

@@ -3,77 +3,53 @@
  * Main application data and functionality
  */
 
-// App data - Easy to update and extend
-const apps = [
-    {
-        name: 'Credit Card Transactions',
-        icon: '💳',
-        status: 'deployed',
-        url: '#', // Update with actual URL when available
-        color: '#34C759'
-    },
-    {
-        name: 'Accounting Software',
-        icon: '📊',
-        status: 'deployed',
-        url: '#',
-        color: '#007AFF'
-    },
-    {
-        name: 'Auction Analysis',
-        icon: '🏠',
-        status: 'deployed',
-        url: '#',
-        color: '#AF52DE'
-    },
-    {
-        name: 'Property Inspection',
-        icon: '📋',
-        status: 'in-progress',
-        url: '#',
-        color: '#FF9500'
-    },
-    {
-        name: 'KPI Dashboard',
-        icon: '📈',
-        status: 'planned',
-        url: '#',
-        color: '#5AC8FA'
-    },
-    {
-        name: 'Crew Timesheet',
-        icon: '⏱️',
-        status: 'planned',
-        url: '#',
-        color: '#8E8E93'
-    },
-    {
-        name: 'Maintenance Requests',
-        icon: '🔧',
-        status: 'planned',
-        url: '#',
-        color: '#FF3B30'
-    },
-    {
-        name: 'Vendor Performance',
-        icon: '📊',
-        status: 'planned',
-        url: '#',
-        color: '#5856D6'
-    },
-    {
-        name: 'Eviction Tracking',
-        icon: '🚪',
-        status: 'planned',
-        url: '#',
-        color: '#FFD60A'
-    }
-];
+// App data - Loaded from JSON configuration file
+let apps = [];
 
 // DOM elements
 const appGrid = document.getElementById('appGrid');
 const searchInput = document.getElementById('searchInput');
 const noResults = document.getElementById('noResults');
+
+/**
+ * Loads app configuration from JSON file
+ * @returns {Promise<Array>} Array of app objects
+ */
+async function loadAppConfig() {
+    try {
+        const response = await fetch('apps-config.json');
+
+        if (!response.ok) {
+            throw new Error(`Failed to load apps configuration: ${response.status}`);
+        }
+
+        const data = await response.json();
+        return data.apps;
+    } catch (error) {
+        console.error('Error loading app configuration:', error);
+        showError('Unable to load apps. Please check that apps-config.json exists.');
+        return [];
+    }
+}
+
+/**
+ * Shows an error message to the user
+ * @param {string} message - The error message to display
+ */
+function showError(message) {
+    appGrid.innerHTML = `
+        <div style="
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 60px 20px;
+            color: #FF3B30;
+            font-size: 18px;
+        ">
+            <div style="font-size: 48px; margin-bottom: 20px;">⚠️</div>
+            <div>${message}</div>
+        </div>
+    `;
+}
 
 /**
  * Creates an app card element
@@ -182,7 +158,10 @@ function handleSearch() {
 /**
  * Initializes the application
  */
-function init() {
+async function init() {
+    // Load app configuration from JSON
+    apps = await loadAppConfig();
+
     // Render all apps initially
     renderApps(apps);
 
@@ -215,28 +194,34 @@ if (document.readyState === 'loading') {
 /**
  * INSTRUCTIONS FOR UPDATING:
  *
+ * App configuration is now stored in apps-config.json
+ * Edit that file to manage your apps!
+ *
  * To add a new app:
- * 1. Add a new object to the apps array above with:
+ * 1. Open apps-config.json
+ * 2. Add a new object to the "apps" array with:
  *    - name: Display name of the app
- *    - icon: Emoji icon (or you can use an image path later)
+ *    - icon: Emoji icon
  *    - status: 'deployed', 'in-progress', or 'planned'
  *    - url: The URL to open when clicked (use '#' as placeholder)
  *    - color: Hex color for the icon background
+ *    - description: Brief description of the app
  *
  * To update an app URL:
- * 1. Find the app in the apps array
- * 2. Update the 'url' property with the actual URL
+ * 1. Open apps-config.json
+ * 2. Find the app and update the 'url' property
  *
  * To change an app status:
- * 1. Find the app in the apps array
- * 2. Update the 'status' property to 'deployed', 'in-progress', or 'planned'
+ * 1. Open apps-config.json
+ * 2. Find the app and update the 'status' property
  *
- * Example:
+ * Example app entry in apps-config.json:
  * {
- *     name: 'My New App',
- *     icon: '🚀',
- *     status: 'deployed',
- *     url: 'https://myapp.example.com',
- *     color: '#FF6B6B'
+ *     "name": "My New App",
+ *     "icon": "🚀",
+ *     "status": "deployed",
+ *     "url": "https://myapp.example.com",
+ *     "color": "#FF6B6B",
+ *     "description": "My awesome new app"
  * }
  */

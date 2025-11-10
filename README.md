@@ -41,45 +41,49 @@ netlify deploy --prod
 
 ## 📝 Updating Apps
 
+All app configuration is now managed in **`apps-config.json`** for easy updates!
+
 ### Add a New App
 
-Edit `app.js` and add to the `apps` array:
+Edit `apps-config.json` and add to the `apps` array:
 
-```javascript
+```json
 {
-    name: 'Your App Name',
-    icon: '🎯',
-    status: 'planned', // or 'deployed' or 'in-progress'
-    url: 'https://your-app-url.com',
-    color: '#FF6B6B'
+    "name": "Your App Name",
+    "icon": "🎯",
+    "status": "planned",
+    "url": "https://your-app-url.com",
+    "color": "#FF6B6B",
+    "description": "Brief description of your app"
 }
 ```
 
 ### Update App URLs
 
-Find the app in `app.js` and change the `url` property:
+Find the app in `apps-config.json` and change the `url` property:
 
-```javascript
+```json
 {
-    name: 'Credit Card Transactions',
-    icon: '💳',
-    status: 'deployed',
-    url: 'https://credit-cards.ajrealestate.com', // ← Update this
-    color: '#34C759'
+    "name": "Credit Card Transactions",
+    "icon": "💳",
+    "status": "deployed",
+    "url": "https://credit-cards.ajrealestate.com",
+    "color": "#34C759",
+    "description": "Process and categorize credit card transactions"
 }
 ```
 
 ### Change App Status
 
-Update the `status` property:
-- `'deployed'` → Green dot (live and working)
-- `'in-progress'` → Yellow dot (being built)
-- `'planned'` → Blue dot (in backlog)
+Update the `status` property in `apps-config.json`:
+- `"deployed"` → Green dot (live and working)
+- `"in-progress"` → Yellow dot (being built)
+- `"planned"` → Blue dot (in backlog)
 
 After making changes, commit and push:
 
 ```bash
-git add app.js
+git add apps-config.json
 git commit -m "Update app configuration"
 git push
 ```
@@ -89,9 +93,12 @@ Netlify will automatically redeploy!
 ## 🎨 Current Apps
 
 - 💳 Credit Card Transactions (Deployed)
-- 📊 Accounting Software (Deployed)
-- 🏠 Auction Analysis (Deployed)
 - 📋 Property Inspection (In Progress)
+- 🏠 Master Property Data (Deployed)
+- 📊 Profit & Loss (Deployed)
+- 💰 Balance Sheet (Deployed)
+- 🏢 Property Portal (Deployed)
+- 📈 P&L Legacy (Deployed)
 - 📈 KPI Dashboard (Planned)
 - ⏱️ Crew Timesheet (Planned)
 - 🔧 Maintenance Requests (Planned)
@@ -101,6 +108,7 @@ Netlify will automatically redeploy!
 ## 🛠 Technical Stack
 
 - Pure HTML/CSS/JavaScript (no frameworks)
+- JSON-based configuration for easy app management
 - Mobile-first responsive design
 - iOS-inspired UI design
 - Real-time search functionality
@@ -115,12 +123,14 @@ Netlify will automatically redeploy!
 ✅ Touch-friendly (44px minimum touch targets)
 ✅ Dark mode support
 ✅ Keyboard shortcuts (Cmd/Ctrl+K for search, Esc to clear)
+✅ **JSON-based configuration** for easy app management
 
 ## 📦 Files
 
 - `index.html` - Main HTML structure
 - `styles.css` - iPhone-inspired styling
-- `app.js` - App data and functionality
+- `app.js` - App functionality and logic
+- `apps-config.json` - **App configuration (edit this to manage apps!)**
 - `netlify.toml` - Netlify configuration
 - `README.md` - This file
 
