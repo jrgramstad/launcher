@@ -73,6 +73,14 @@
       "description": "Property auction preparation and analysis"
     },
     {
+      "name": "Project Tracker",
+      "icon": "🎯",
+      "status": "deployed",
+      "url": "https://project-tracker-aj.netlify.app",
+      "color": "#00A3E0",
+      "description": "Track project progress and milestones"
+    },
+    {
       "name": "KPI Dashboard",
       "icon": "📈",
       "status": "planned",

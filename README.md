@@ -101,6 +101,7 @@ Netlify will automatically redeploy!
 - 📈 P&L Legacy (Deployed)
 - 🏘️ Rent or Flip (Deployed)
 - 🔨 Auction Prepwork (Deployed)
+- 🎯 Project Tracker (Deployed)
 - 📈 KPI Dashboard (Planned)
 - ⏱️ Crew Timesheet (Planned)
 - 🔧 Maintenance Requests (Planned)
